@@ -2,14 +2,47 @@
 public void setup() 
 {
   //your code here
+  size(500, 500);
 }
 public void draw() 
 {
   //your code here
 }
-class SpaceShip //extends Floater  
+class SpaceShip extends Floater  
 {   
     //your code here
+    public void setX(int x){myCenterX = x;}
+    public int getX(){return (int)myCenterX;}
+    public void setY(int y){myCenterY = y;}
+    public int getY(){return (int)myCenterY;}
+    public void setDirectionX(double x){myDirectionX = x;}
+    public double getDirectionX(){return (double)myDirectionX;}
+    public void setDirectionY(double y){myDirectionY = y;}
+    public double getDirectionY(){return (double)myDirectionY = y;}
+    public void setPointDirection(int degrees){myPointDirection = degrees;}
+    public double setPointDirection(){return (double)myPointDirection = degrees;}
+
+    public SpaceShip() 
+    {
+      corners = 4;
+      xCorners = new int[corners];
+      yCorners = new int [corners];
+      xCorners[0] =  5;
+      yCorners[0] =  0;
+      xCorners[1] = -8;
+      yCorners[1] = -5;
+      xCorners[2] = -3;
+      yCorners[2] =  0;
+      xCorners[3] = -8;
+      yCorners[3] =  5;
+
+    }
+
+    // 
+    // myColor = color(133, 255, 50);
+
+
+
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
