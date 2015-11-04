@@ -1,4 +1,5 @@
 //your variable declarations here
+SpaceShip joe = new SpaceShip();
 public void setup() 
 {
   //your code here
@@ -7,6 +8,7 @@ public void setup()
 public void draw() 
 {
   //your code here
+  joe.show();
 }
 class SpaceShip extends Floater  
 {   
@@ -18,9 +20,9 @@ class SpaceShip extends Floater
     public void setDirectionX(double x){myDirectionX = x;}
     public double getDirectionX(){return (double)myDirectionX;}
     public void setDirectionY(double y){myDirectionY = y;}
-    public double getDirectionY(){return (double)myDirectionY = y;}
+    public double getDirectionY(){return (double)myDirectionY;}
     public void setPointDirection(int degrees){myPointDirection = degrees;}
-    public double setPointDirection(){return (double)myPointDirection = degrees;}
+    public double getPointDirection(){return (double)myPointDirection;}
 
     public SpaceShip() 
     {
@@ -36,10 +38,19 @@ class SpaceShip extends Floater
       xCorners[3] = -8;
       yCorners[3] =  5;
 
+      myColor = color(255, 0, 0);
+      setX(255);
+      setY(255);
+      setDirectionX(0);
+      setDirectionY(0);
+      setPointDirection(0);
+    }
+    public void keyPressed()
+    {
+      
+
     }
 
-    // 
-    // myColor = color(133, 255, 50);
 
 
 
