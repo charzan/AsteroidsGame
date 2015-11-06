@@ -26,6 +26,7 @@ class SpaceShip extends Floater
 
     public SpaceShip() 
     {
+
       corners = 4;
       xCorners = new int[corners];
       yCorners = new int [corners];
@@ -47,7 +48,12 @@ class SpaceShip extends Floater
     }
     public void keyPressed()
     {
-      
+      if(keyPressed == true && key == 'e')
+      {
+        nDegreesOfRotation = 1;
+        rotate();
+      }
+
 
     }
 
