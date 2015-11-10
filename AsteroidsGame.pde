@@ -4,11 +4,14 @@ public void setup()
 {
   //your code here
   size(500, 500);
+
 }
 public void draw() 
 {
   //your code here
   joe.show();
+  joe.move();
+  
 }
 class SpaceShip extends Floater  
 {   
@@ -45,13 +48,13 @@ class SpaceShip extends Floater
       setDirectionX(0);
       setDirectionY(0);
       setPointDirection(0);
+
     }
-    public void keyPressed()
+    public void move()
     {
       if(keyPressed == true && key == 'e')
       {
-        nDegreesOfRotation = 1;
-        rotate();
+        setPointDirection(150);
       }
 
 
