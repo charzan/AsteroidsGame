@@ -11,8 +11,8 @@ public void draw()
   //your code here
   background(100);
   joe.show();
-  joe.doStuff();
-  if(keyPressed == true && key == 'm'){joe.move();}
+  joe.keyPressed();
+  //if(keyPressed == true && key == 'm'){joe.move();}
   
 }
 class SpaceShip extends Floater  
@@ -52,23 +52,28 @@ class SpaceShip extends Floater
       setPointDirection(0);
 
     }
-    public void doStuff()
+    public void keyPressed()
     {
       if(keyPressed == true && key == 'r')
       {
-        rotate(50);
+        joe.rotate(10);
       }
       if(keyPressed == true && key == 'l')
       {
-        rotate(-50);
+        joe.rotate(-10);
       }
       if(keyPressed == true && key == 'a')
       {
-        accelerate(25);
+        joe.accelerate(5);
+      }
+       if(keyPressed == true && key == 'u')
+      {
+        joe.move();
       }
 
 
     }
+
 
 
 
