@@ -12,6 +12,7 @@ public void draw()
   background(100);
   joe.show();
   joe.keyPressed();
+  joe.move();
   //if(keyPressed == true && key == 'm'){joe.move();}
   
 }
@@ -66,12 +67,12 @@ class SpaceShip extends Floater
       {
         joe.accelerate(5);
       }
-       if(keyPressed == true && key == 'u')
+      if(keyPressed == true && key == 'h')
       {
-        joe.move();
+         joe.setX((int)(Math.random()*500));
+         joe.setY((int)(Math.random()*500));
+         joe.setPointDirection((int)(Math.random()*360));
       }
-
-
     }
 
 
