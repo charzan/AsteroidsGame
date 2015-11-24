@@ -55,17 +55,21 @@ class SpaceShip extends Floater
     }
     public void keyPressed()
     {
-      if(keyPressed == true && key == 'r')
+      if(keyPressed == true && key == 'w')
       {
-        joe.rotate(10);
+        joe.rotate(5);
       }
-      if(keyPressed == true && key == 'l')
+      if(keyPressed == true && key == 's')
       {
-        joe.rotate(-10);
+        joe.rotate(-5);
       }
       if(keyPressed == true && key == 'a')
       {
-        joe.accelerate(5);
+        joe.accelerate(.2);
+      }
+       if(keyPressed == true && key == 'd')
+      {
+        joe.accelerate(-.2);
       }
       if(keyPressed == true && key == 'h')
       {
