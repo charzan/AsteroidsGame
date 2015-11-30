@@ -7,9 +7,10 @@ public void setup()
 
 }
 public void draw() 
+
 {
   //your code here
-  background(100);
+  background(0);
   joe.show();
   joe.keyPressed();
   joe.move();
@@ -57,11 +58,11 @@ class SpaceShip extends Floater
     {
       if(keyPressed == true && key == 'w')
       {
-        joe.rotate(5);
+        joe.rotate(1);
       }
       if(keyPressed == true && key == 's')
       {
-        joe.rotate(-5);
+        joe.rotate(-1);
       }
       if(keyPressed == true && key == 'a')
       {
