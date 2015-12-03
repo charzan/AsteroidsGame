@@ -1,5 +1,6 @@
 //your variable declarations here
 SpaceShip joe = new SpaceShip();
+Star [] sky = new Star[100];
 public void setup() 
 {
   //your code here
@@ -14,8 +15,31 @@ public void draw()
   joe.show();
   joe.keyPressed();
   joe.move();
+  for (int i = 0; i < sky.length; i++)
+  {
+   sky[i].show(); 
+  }
+  
   //if(keyPressed == true && key == 'm'){joe.move();}
   
+}
+class Star
+{
+  int starX;
+  int starY;
+  int starSize;
+  public Star()
+  {
+    starX = (int)Math.random()*500;
+    starY = (int)Math.random()*500;
+    starSize = Math.random()*5;
+  }
+  public void show()
+  {
+    ellipse(starX, starY, starSize, starSize);
+    fill(255);
+  }
+
 }
 class SpaceShip extends Floater  
 {   
@@ -56,23 +80,23 @@ class SpaceShip extends Floater
     }
     public void keyPressed()
     {
-      if(keyPressed == true && key == 'w')
+      if(key == 'w')
       {
         joe.rotate(1);
       }
-      if(keyPressed == true && key == 's')
+      if(key == 's')
       {
         joe.rotate(-1);
       }
-      if(keyPressed == true && key == 'a')
+      if(key == 'a')
       {
         joe.accelerate(.2);
       }
-       if(keyPressed == true && key == 'd')
+       if(key == 'd')
       {
         joe.accelerate(-.2);
       }
-      if(keyPressed == true && key == 'h')
+      if(key == 'h')
       {
          joe.setX((int)(Math.random()*500));
          joe.setY((int)(Math.random()*500));
