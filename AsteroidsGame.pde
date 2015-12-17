@@ -5,6 +5,10 @@ public void setup()
 {
   //your code here
   size(500, 500);
+  for (int i = 0; i < sky.length; i++)
+  {
+   sky[i] = new Star(); 
+  }
 
 }
 public void draw() 
@@ -13,7 +17,8 @@ public void draw()
   //your code here
   background(0);
   joe.show();
-  joe.keyPressed();
+  if(keyPressed == true){ joe.keyPressed();}
+ 
   joe.move();
   for (int i = 0; i < sky.length; i++)
   {
@@ -30,14 +35,16 @@ class Star
   int starSize;
   public Star()
   {
-    starX = (int)Math.random()*500;
-    starY = (int)Math.random()*500;
-    starSize = Math.random()*5;
+    starX = (int)(Math.random()*500);
+    starY = (int)(Math.random()*500);
+    starSize = (int)(Math.random()*5);
   }
   public void show()
   {
-    ellipse(starX, starY, starSize, starSize);
+    stroke(45, 63, 255);
     fill(255);
+    ellipse(starX, starY, starSize, starSize);
+    
   }
 
 }
@@ -80,27 +87,22 @@ class SpaceShip extends Floater
     }
     public void keyPressed()
     {
-      if(key == 'w')
-      {
-        joe.rotate(1);
-      }
-      if(key == 's')
-      {
-        joe.rotate(-1);
-      }
-      if(key == 'a')
-      {
-        joe.accelerate(.2);
-      }
-       if(key == 'd')
-      {
-        joe.accelerate(-.2);
-      }
+      if(key == 'w'){joe.rotate(1);}
+      if(key == 's'){joe.rotate(-1);}
+      if(key == 'a'){joe.accelerate(0.03);}
+      if(key == 'd'){joe.accelerate(-0.03);}
+      if(key == 'o')
+        {
+          joe.setDirectionY(0);
+          joe.setDirectionX(0);
+        }
       if(key == 'h')
       {
          joe.setX((int)(Math.random()*500));
          joe.setY((int)(Math.random()*500));
          joe.setPointDirection((int)(Math.random()*360));
+         joe.setDirectionY(0);
+         joe.setDirectionX(0);         
       }
     }
 
@@ -183,6 +185,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
       vertex(xRotatedTranslated,yRotatedTranslated);    
     }   
     endShape(CLOSE);  
+
   }   
 } 
 
