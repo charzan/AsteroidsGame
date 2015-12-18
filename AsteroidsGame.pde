@@ -9,8 +9,8 @@ int screenSize ;
 public void setup() 
 {
   //your code here
-  size(500, 500);
-  screenSize = displayWidth;
+  size(750, 750);
+  screenSize = 750;
   for (int i = 0; i < sky.length; i++)
   {
    sky[i] = new Star(); 
