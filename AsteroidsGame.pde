@@ -1,19 +1,22 @@
 //your variable declarations here
 SpaceShip joe = new SpaceShip();
-Star [] sky = new Star[100];
-Asteroid [] danger1 = new Asteroid[10];
+Star [] sky = new Star[400];
+ArrayList <Asteroid> danger1 = new ArrayList <Asteroid>();
+int numAs = 25;
+int screenSize ;
 
 public void setup() 
 {
   //your code here
-  size(500, 500);
+  size(750, 750);
+  screenSize = displayWidth;
   for (int i = 0; i < sky.length; i++)
   {
    sky[i] = new Star(); 
   }
-  for(int i = 0; i < danger1.length; i++)
+  for(int i = 0; i < numAs; i++)
   {
-    danger1[i] = new Asteroid();
+    danger1.add(new Asteroid());
   }
 
 }
@@ -30,10 +33,10 @@ public void draw()
   {
    sky[i].show(); 
   }
-  for(int i = 0; i < danger1.length; i++)
+  for(int i = 0; i < numAs; i++)
   {
-    danger1[i].show();
-    danger1[i].move();
+    danger1.get(i).show();
+    danger1.get(i).move();
   }
   
 
@@ -49,8 +52,8 @@ class Star
 
   public Star()
   {
-    starX = (int)(Math.random()*500);
-    starY = (int)(Math.random()*500);
+    starX = (int)(Math.random()*screenSize);
+    starY = (int)(Math.random()*screenSize);
     starSize = (int)(Math.random()*5);
   }
   public void show()
@@ -112,8 +115,8 @@ class SpaceShip extends Floater
         }
       if(key == 'h')
       {
-         joe.setX((int)(Math.random()*500));
-         joe.setY((int)(Math.random()*500));
+         joe.setX((int)(Math.random()*screenSize));
+         joe.setY((int)(Math.random()*screenSize));
          joe.setPointDirection((int)(Math.random()*360));
          joe.setDirectionY(0);
          joe.setDirectionX(0);         
@@ -187,8 +190,8 @@ class Asteroid extends Floater
 
 
     myColor = color(41, 61, 61);
-    setX(255);
-    setY(255);
+    setX((int)(Math.random()*screenSize));
+    setY((int)(Math.random()*screenSize));
     setDirectionX(0);
     setDirectionY(0);
     setPointDirection(0);
