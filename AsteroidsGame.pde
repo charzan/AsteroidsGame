@@ -9,7 +9,7 @@ int screenSize ;
 public void setup() 
 {
   //your code here
-  size(750, 750);
+  size(500, 500);
   screenSize = displayWidth;
   for (int i = 0; i < sky.length; i++)
   {
