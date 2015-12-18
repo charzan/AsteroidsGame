@@ -33,17 +33,29 @@ public void draw()
   {
    sky[i].show(); 
   }
-  for(int i = 0; i < numAs; i++)
+  for(int i = 0; i < danger1.size(); i++)
   {
-    danger1.get(i).show();
-    danger1.get(i).move();
-  }
-  
+    boolean collision = false;
+    Asteroid ast = danger1.get(i); 
+    double distance = dist(joe.getX(), joe.getY(), ast.getX(), ast.getY());
 
-  
-  //if(keyPressed == true && key == 'm'){joe.move();}
-  
+    if(distance < 20)
+    {
+      collision = true;
+    }
+
+    if(collision)
+    {
+      danger1.remove(i);
+    }
+    else
+    {
+      ast.show();
+      ast.move();
+    }
+  }
 }
+
 class Star
 {
   public int starX;
@@ -203,6 +215,7 @@ class Asteroid extends Floater
     myCenterX += speedX;
     myCenterY += speedY;
     rotate(rotateSpeed);
+
   }
 }
 
